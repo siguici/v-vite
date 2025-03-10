@@ -15,40 +15,40 @@ of projects built with the [V programming language](https://vlang.io/).
 Using npm:
 
 ```sh
-npm install v-vite-plugin --save-dev
+npm install v-vite --save-dev
 ```
 
 Using pnpm:
 
 ```sh
-pnpm add v-vite-plugin --save-dev
+pnpm add v-vite --save-dev
 ```
 
 Using yarn:
 
 ```sh
-yarn add v-vite-plugin --dev
+yarn add v-vite --dev
 ```
 
 Using Bun:
 
 ```sh
-bun add v-vite-plugin --dev
+bun add v-vite --dev
 ```
 
 Using Deno:
 
 ```sh
-deno add npm:v-vite-plugin
+deno add npm:v-vite
 ```
 
 ## ⚙️ Usage
 
-Add `v-vite-plugin` to your `vite.config.js` or `vite.config.ts`:
+Add `v-vite` to your `vite.config.js` or `vite.config.ts`:
 
 ```js
 import { defineConfig } from 'vite';
-import v from 'v-vite-plugin';
+import v from 'v-vite';
 
 export default defineConfig({
   plugins: [v('src/resources/main.js')],

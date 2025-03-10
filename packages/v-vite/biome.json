@@ -3,7 +3,7 @@
     "ignore": ["dist"]
   },
   "linter": {
-    "include": ["bin", "src", "tests"],
+    "include": ["src", "tests"],
     "ignore": ["dist"],
     "rules": {
       "style": {

@@ -324,7 +324,7 @@ function resolvePluginConfig(
   config: string | string[] | PluginConfig
 ): Required<PluginConfig> {
   if (typeof config === 'undefined') {
-    throw new Error('v-vite-plugin: missing configuration.');
+    throw new Error('v-vite: missing configuration.');
   }
 
   if (typeof config === 'string' || Array.isArray(config)) {
@@ -332,7 +332,7 @@ function resolvePluginConfig(
   }
 
   if (typeof config.input === 'undefined') {
-    throw new Error('v-vite-plugin: missing configuration for "input".');
+    throw new Error('v-vite: missing configuration for "input".');
   }
 
   if (typeof config.publicDirectory === 'string') {
@@ -340,7 +340,7 @@ function resolvePluginConfig(
 
     if (config.publicDirectory === '') {
       throw new Error(
-        "v-vite-plugin: publicDirectory must be a subdirectory. E.g. 'public'."
+        "v-vite: publicDirectory must be a subdirectory. E.g. 'public'."
       );
     }
   }
@@ -353,7 +353,7 @@ function resolvePluginConfig(
 
     if (config.buildDirectory === '') {
       throw new Error(
-        "v-vite-plugin: buildDirectory must be a subdirectory. E.g. 'build'."
+        "v-vite: buildDirectory must be a subdirectory. E.g. 'build'."
       );
     }
   }
@@ -502,7 +502,7 @@ function noExternalInertiaHelpers(
   /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
   /* @ts-ignore */
   const userNoExternal = (config.ssr as SSROptions | undefined)?.noExternal;
-  const pluginNoExternal = ['v-vite-plugin'];
+  const pluginNoExternal = ['v-vite'];
 
   if (userNoExternal === true) {
     return true;

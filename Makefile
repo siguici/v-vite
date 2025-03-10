@@ -2,10 +2,10 @@
 
 install: node_modules pnpm-lock.yaml
 
-node_modules: package.json packages/v-vite-plugin/package.json
+node_modules: package.json packages/v-vite/package.json
 	pnpm i -r --frozen-lockfile
 
-pnpm-lock.yaml: package.json packages/v-vite-plugin/package.json
+pnpm-lock.yaml: package.json packages/v-vite/package.json
 	pnpm up -r
 	pnpm fix
 

@@ -9,11 +9,12 @@ and build processes for V-based projects using Vite.
 
 This repository currently includes:
 
-- [`v-vite-plugin`](./packages/v-vite-plugin) - A Vite.js plugin for V applications.
+- [`v-vite`](./packages/v-vite-plugin) -
+A [Vite.js](https://github.com/vitejs/vite) plugin
+for [V](https://github.com/vlang/v) applications.
 
 ### 🔜 Planned Packages
 
-- `v-vite` - A CLI tool for managing V projects with Vite.
 - `create-v-vite` - A scaffolding tool for bootstrapping V projects with Vite integration.
 
 ## 🚀 Installation

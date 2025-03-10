@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 
-  "extends": ["./packages/v-vite-plugin/biome.json"],
+  "extends": ["./packages/v-vite/biome.json"],
 
   "files": {
     "ignore": [".git", "dist", "node_modules"]

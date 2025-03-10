@@ -21,7 +21,7 @@ const normalizePath = (path: string): string => {
   return process.platform === 'win32' ? path.replaceAll('/', '\\') : path;
 };
 
-describe('v-vite-plugin', () => {
+describe('v-vite', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
@@ -29,12 +29,12 @@ describe('v-vite-plugin', () => {
   it('handles missing configuration', () => {
     /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     /* @ts-ignore */
-    expect(() => v()).toThrowError('v-vite-plugin: missing configuration.');
+    expect(() => v()).toThrowError('v-vite: missing configuration.');
 
     /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
     /* @ts-ignore */
     expect(() => v({})).toThrowError(
-      'v-vite-plugin: missing configuration for "input".'
+      'v-vite: missing configuration for "input".'
     );
   });
 
@@ -333,7 +333,7 @@ describe('v-vite-plugin', () => {
       { command: 'build', mode: 'production' }
     );
     /* @ts-ignore */
-    expect(noSsrConfig.ssr.noExternal).toEqual(['v-vite-plugin']);
+    expect(noSsrConfig.ssr.noExternal).toEqual(['v-vite']);
 
     /* @ts-ignore */
     const nothingExternalConfig = plugin.config(
@@ -349,10 +349,7 @@ describe('v-vite-plugin', () => {
       { command: 'build', mode: 'production' }
     );
     /* @ts-ignore */
-    expect(arrayNoExternalConfig.ssr.noExternal).toEqual([
-      'foo',
-      'v-vite-plugin'
-    ]);
+    expect(arrayNoExternalConfig.ssr.noExternal).toEqual(['foo', 'v-vite']);
 
     /* @ts-ignore */
     const stringNoExternalConfig = plugin.config(
@@ -360,10 +357,7 @@ describe('v-vite-plugin', () => {
       { command: 'build', mode: 'production' }
     );
     /* @ts-ignore */
-    expect(stringNoExternalConfig.ssr.noExternal).toEqual([
-      'foo',
-      'v-vite-plugin'
-    ]);
+    expect(stringNoExternalConfig.ssr.noExternal).toEqual(['foo', 'v-vite']);
   });
 
   it('does not configure full reload when configuration it not an object', () => {
