@@ -1,6 +1,13 @@
 name: CI
 
-on: ['push', 'pull_request']
+on:
+  push:
+    branches:
+      - main
+      - '*.x'
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
 
 env:
   V_BYPASS_ENV_CHECK: 1

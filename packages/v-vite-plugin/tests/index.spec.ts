@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import v from '../src';
 
@@ -15,6 +16,10 @@ vi.mock('fs', async () => {
     }
   };
 });
+
+const normalizePath = (path: string): string => {
+  return process.platform === 'win32' ? path.replaceAll('/', '\\') : path;
+};
 
 describe('v-vite-plugin', () => {
   afterEach(() => {
@@ -77,7 +82,7 @@ describe('v-vite-plugin', () => {
     const config = plugin.config({}, { command: 'build', mode: 'production' });
     expect(config.base).toBe('/other-build/');
     expect(config.build.manifest).toBe('manifest.json');
-    expect(config.build.outDir).toBe('other-public/other-build');
+    expect(config.build.outDir).toBe(normalizePath('other-public/other-build'));
     expect(config.build.rollupOptions.input).toBe('src/resources/app.ts');
 
     const ssrConfig = plugin.config(
@@ -202,7 +207,7 @@ describe('v-vite-plugin', () => {
     const config = plugin.config({}, { command: 'build', mode: 'production' });
     expect(config.base).toBe('/build/');
     expect(config.build.manifest).toBe('manifest.json');
-    expect(config.build.outDir).toBe('public/build');
+    expect(config.build.outDir).toBe(normalizePath('public/build'));
     expect(config.build.rollupOptions.input).toBe('src/resources/app.js');
 
     const ssrConfig = plugin.config(
@@ -267,7 +272,7 @@ describe('v-vite-plugin', () => {
 
     const config = plugin.config({}, { command: 'build', mode: 'production' });
     expect(config.base).toBe('/build/test/');
-    expect(config.build.outDir).toBe('public/test/build/test');
+    expect(config.build.outDir).toBe(normalizePath('public/test/build/test'));
 
     const ssrConfig = plugin.config(
       { build: { ssr: true } },
