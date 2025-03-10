@@ -1,0 +1,56 @@
+{
+  "name": "v-vite-plugin",
+  "type": "module",
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "A Vite.js plugin for integrating the V programming language with modern frontend tooling.",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsup-node --env.NODE_ENV production",
+    "start": "tsup-node --env.NODE_ENV development --watch",
+    "test": "vitest --run --passWithNoTests"
+  },
+  "author": "Sigui Kessé Emmanuel <siguici@proton.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siguici/v-vite",
+    "directory": "packages/v-vite-plugin"
+  },
+  "homepage": "https://siguici.github.io/v-vite",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": "https://github.com/siguici/v-vite/issues",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": ["v", "vite", "vitejs", "vite-plugin", "vlang", "v-vite"],
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.4",
+    "@types/node": "^22.13.10",
+    "rollup": "^4.35.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8"
+  },
+  "dependencies": {
+    "picocolors": "^1.1.1",
+    "vite-plugin-full-reload": "^1.2.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "organizeImports": {
+    "ignore": ["dist"]
+  },
+  "linter": {
+    "include": ["bin", "src", "tests"],
+    "ignore": ["dist"],
+    "rules": {
+      "style": {
+        "noParameterAssign": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noMisleadingCharacterClass": "off"
+      }
+    }
+  },
+  "formatter": {
+    "ignore": ["dist"]
+  }
+}

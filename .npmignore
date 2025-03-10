@@ -1,0 +1,11 @@
+.*/
+bin/
+src/
+tests/
+Makefile
+biome.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+tsconfig.json
+tsup.config.ts
+
