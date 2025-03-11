@@ -1,4 +1,4 @@
-# V Vite <span><img src="https://github.com/siguici/art/blob/HEAD/images/logo.svg" alt="⚡" width="24" /></span>
+# V Vite <span><img src="https://github.com/siguici/art/blob/HEAD/images/v-vite.svg" alt="⚡" width="24" /></span>
 
 **V-Vite** is a collection of tools designed to integrate
 the [V programming language](https://vlang.io/) with [Vite.js](https://vitejs.dev/).
